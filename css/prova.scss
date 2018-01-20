@@ -1,0 +1,116 @@
+$title-font: normal 24px/1.5 'Open Sans', sans-serif;
+$cool-red: #F44336;
+$box-shadow-bottom-only: 0 2px 1px 0 rgba(0, 0, 0, 0.2);
+
+h1.title {
+    font: $title-font;
+    color: $cool-red;
+}
+
+div.container {
+    width: 400px;
+    height: 400px;
+
+    animation-iteration-count: infinite;
+    animation-name: nimation;
+    animation-duration: 5s;
+    animation-direction: normal;
+    color: $cool-red;
+    background: #F44336;
+    box-shadow: $box-shadow-bottom-only;
+}
+
+@keyframes nimation {
+    0% {
+        margin-left: 10%;
+        animation-timing-function: cubic-bezier(.75, .25, .75, 1.25);
+    }
+
+    90% {
+        margin-left: 90%;
+        animation-timing-function: cubic-bezier(.75, .25, .75, 1.25);
+    }
+    100% {
+        margin-left: 90%;
+        animation-timing-function: linear;
+    }
+}
+
+div.core {
+    border-radius: 50%;
+    background-color: green;
+    width: 150px;
+    height: 150px;
+    margin-top: 20%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.electron {
+    background-color: chartreuse;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    animation: orbitX 5s normal infinite;
+}
+div.electron:after{
+    animation: orbitY 5s normal infinite;
+}
+
+$x1 : 200;
+$y1 : 300;
+@keyframes orbitX{
+    0% {
+        margin-top: $x1 px;
+        animation-timing-function: ease-in;
+        /*margin-left: $y1 px;*/
+    }
+    25% {
+        margin-top: $x1+100 px;
+        animation-timing-function: ease-out;
+        /*margin-left: $y1+40 px;*/
+    }
+    50% {
+        margin-top: $x1+200 px;
+        animation-timing-function: ease-in;
+        /*margin-left: $y1+80 px;*/
+    }
+    75% {
+        margin-top: $x1+100 px;
+        animation-timing-function: ease-out;
+        /*margin-left: $y1+40 px;*/
+    }
+    100%{
+        margin-top: $x1 px;
+        animation-timing-function: ease-in;
+        /*margin-left: $y1 px;*/
+    }
+}
+
+@keyframes orbitY{
+    0% {
+        margin-left: $y1 px;
+        animation-timing-function: ease-out;
+        /*margin-left: $y1 px;*/
+    }
+    25% {
+        margin-left: $y1+40 px;
+        animation-timing-function: ease-in;
+        /*margin-left: $y1+40 px;*/
+    }
+    50% {
+        margin-left: $y1+80 px;
+        animation-timing-function: ease-out;
+        /*margin-left: $y1+80 px;*/
+    }
+    75% {
+        margin-left: $y1+40 px;
+        animation-timing-function: ease-in;
+        /*margin-left: $y1+40 px;*/
+    }
+    100%{
+        margin-left: $y1 px;
+        animation-timing-function: ease-out;
+        /*margin-left: $y1 px;*/
+    }
+}
