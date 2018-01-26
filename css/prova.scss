@@ -22,23 +22,21 @@ div.container {
 
 @keyframes nimation {
     0% {
-        margin-left: 10%;
         animation-timing-function: cubic-bezier(.75, .25, .75, 1.25);
     }
 
-    90% {
-        margin-left: 90%;
-        animation-timing-function: cubic-bezier(.75, .25, .75, 1.25);
-    }
     100% {
-        margin-left: 90%;
-        animation-timing-function: linear;
+        transform: translateX(50%);
+        transform: translateY(50%);
+        animation-timing-function: cubic-bezier(.75, .25, .75, 1.25);
     }
 }
 
 div.core {
+    position: absolute;
     border-radius: 50%;
     background-color: green;
+    animation: nimation 1s alternate infinite;
     width: 150px;
     height: 150px;
     margin-top: 20%;
@@ -47,70 +45,39 @@ div.core {
 }
 
 div.electron {
+    position:relative;
+    display: inline-block;
     background-color: chartreuse;
     border-radius: 50%;
     width: 15px;
     height: 15px;
-    animation: orbitX 5s normal infinite;
+    animation: orbitX 5s alternate infinite;
 }
-div.electron:after{
-    animation: orbitY 5s normal infinite;
+div.ext{
+    position: absolute;
+    animation: orbitY 5s alternate infinite;
 }
 
 $x1 : 200;
 $y1 : 300;
-@keyframes orbitX{
-    0% {
-        margin-top: $x1 px;
-        animation-timing-function: ease-in;
+@keyframes orbitY{
+    0%{
+        transition-timing-function: ease-in-out;
+        transform: translateY(400px);
         /*margin-left: $y1 px;*/
     }
-    25% {
-        margin-top: $x1+100 px;
-        animation-timing-function: ease-out;
-        /*margin-left: $y1+40 px;*/
-    }
-    50% {
-        margin-top: $x1+200 px;
-        animation-timing-function: ease-in;
-        /*margin-left: $y1+80 px;*/
-    }
-    75% {
-        margin-top: $x1+100 px;
-        animation-timing-function: ease-out;
-        /*margin-left: $y1+40 px;*/
+    50%{
+
     }
     100%{
-        margin-top: $x1 px;
-        animation-timing-function: ease-in;
-        /*margin-left: $y1 px;*/
+
     }
 }
 
-@keyframes orbitY{
-    0% {
-        margin-left: $y1 px;
-        animation-timing-function: ease-out;
-        /*margin-left: $y1 px;*/
-    }
-    25% {
-        margin-left: $y1+40 px;
-        animation-timing-function: ease-in;
-        /*margin-left: $y1+40 px;*/
-    }
-    50% {
-        margin-left: $y1+80 px;
-        animation-timing-function: ease-out;
-        /*margin-left: $y1+80 px;*/
-    }
-    75% {
-        margin-left: $y1+40 px;
-        animation-timing-function: ease-in;
-        /*margin-left: $y1+40 px;*/
-    }
-    100%{
-        margin-left: $y1 px;
-        animation-timing-function: ease-out;
+@keyframes orbitX{
+    to{
+        transition-timing-function: ease-in-out;
+        transform: translateX(700px);
         /*margin-left: $y1 px;*/
     }
 }
