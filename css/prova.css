@@ -1,0 +1,58 @@
+h1.title {
+  font: normal 24px/1.5 "Open Sans", sans-serif;
+  color: #F44336; }
+
+div.container {
+  width: 400px;
+  height: 400px;
+  animation-iteration-count: infinite;
+  animation-name: nimation;
+  animation-duration: 5s;
+  animation-direction: normal;
+  color: #F44336;
+  background: #F44336;
+  box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.2); }
+
+@keyframes nimation {
+  0% {
+    animation-timing-function: cubic-bezier(0.75, 0.25, 0.75, 1.25); }
+  100% {
+    transform: translateX(50%);
+    transform: translateY(50%);
+    animation-timing-function: cubic-bezier(0.75, 0.25, 0.75, 1.25); } }
+div.core {
+  position: absolute;
+  border-radius: 50%;
+  background-color: green;
+  animation: nimation 1s alternate infinite;
+  width: 150px;
+  height: 150px;
+  margin-top: 20%;
+  margin-left: auto;
+  margin-right: auto; }
+
+div.electron {
+  position: relative;
+  display: inline-block;
+  background-color: chartreuse;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  animation: orbitX 5s alternate infinite; }
+
+div.ext {
+  position: absolute;
+  animation: orbitY 5s alternate infinite; }
+
+@keyframes orbitY {
+  0% {
+    transition-timing-function: ease-in-out;
+    transform: translateY(400px);
+    /*margin-left: $y1 px;*/ } }
+@keyframes orbitX {
+  to {
+    transition-timing-function: ease-in-out;
+    transform: translateX(700px);
+    /*margin-left: $y1 px;*/ } }
+
+/*# sourceMappingURL=prova.css.map */
